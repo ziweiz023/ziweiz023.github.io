@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Open+Sans:ital,wght@0,300;1,300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.gradient-background {
+    background: linear-gradient(135deg, #aac9f6, #fef6f6, #e5d1f3 );
+    background-size: 180% 180%;
+    animation: gradient-animation 8s ease infinite;
+  }
+  
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+.header-container {
+    display: flex;
+    align-items: center; 
+    justify-content: center;/* vertically center the SVG and h1 */
+    margin-top: 10px;
+    height: 120px;
+}
+
+/* Ensure the root elements have height */
+body {
+    /* background: linear-gradient(to bottom, rgb(186, 186, 183), ivory); */
+    margin: 0;
+    display: grid;
+    flex-direction: row;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-align: center;
+    transition: background 0.5s ease-in-out;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto auto min-content;
+    grid-template-areas:
+        "header"
+        "lightbulb"
+        "map";
+    min-height: 100vh;
+    width: 100%;
+}
+
+.grid-container h1 {
+    grid-area: header;
+    margin: 0;
+    padding: 20px;
+    font-size: 80px;
+    font-family: "quicksand", sans-serif;
+    font-weight: 200;
+    transition: background-color 0.6s ease-in-out;
+    /* text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(196, 196, 196, 0.6),
+    2px 2px 4px rgba(61, 61, 61, 0.6); */
+}
+
+
+.slider-container {
+    justify-items: center;  /* centers grid items horizontally */
+    align-items: top;    /* centers grid items vertically */
+    height: min-content;           /* full height of the parent */
+    text-align: center;     /* center text inside the container */
+    margin-bottom: 10px;
+}
+
+
+/* Center the map container */
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    margin-top: 10px;
+    height: 100vh;
+}
+
+
+#map {
+    width: 1100px;
+    height: 700px;
+    --s: 10px; /* control the frame size */
+    padding: var(--s);
+    border: calc(2 * var(--s)) solid #0000;
+    outline: 1px solid #000;
+    outline-offset: calc(-1 * var(--s));
+    background: conic-gradient(from 90deg at 1px 1px, #0000 25%, #000 0);
+}
+
+
+.slider {
+    width: 280px;
+    grid-column: 1 / -1;    /* spans across both grid columns */
+}
+
+#light-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 10px;
+    background: #26262646; /* Default background */
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out; /* Smooth transition for background */
+}
+
+#light-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #3f3e3e; /* Default thumb color */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out; /* Smooth transition for thumb color */
+}
+
+#light-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #666; /* Default thumb color */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out; /* Smooth transition for thumb color */
+}
+
+h2 {
+    font-family: "quicksand", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#art {
+    transition: stroke 1s ease-in-out;
+    width: 90px;
+    height: 90px;
+    filter:
+        drop-shadow(0 0 6px rgba(255, 255, 255, 0.8))
+        drop-shadow(2px 2px 6px rgba(62, 62, 62, 0.5));
+}
+
