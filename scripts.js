@@ -4,8 +4,8 @@ const map = new mapboxgl.Map({
   container: 'map', // container ID
   style: 'mapbox://styles/mapbox/light-v11',
   center: [-73.97234, 40.73422], // starting position [lng, lat]. 
-  zoom: 12.3,
-  bearing: 117
+  zoom: 10.3,
+  // bearing: 117
 });
 
 
