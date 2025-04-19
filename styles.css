@@ -25,7 +25,7 @@ body {
 #CVI {
     position: relative;
     background-image: url('./CVI-background.png'); /* Replace with your actual image path */
-    background-size: 130%; 
+    background-size: 125%; 
     background-position: right 100% bottom 70%;  /* Shift image to the right */
     background-repeat: no-repeat; /* Prevents tiling */
     overflow: hidden;
@@ -89,4 +89,12 @@ body {
 header {
   background-color: #57068c; /* soft purple */
   color: #ffffff;
+}
+
+#CVI {
+  transition: background-size 0.5s ease;
+}
+
+#CVI.zoomed {
+  background-size: 130%;
 }
