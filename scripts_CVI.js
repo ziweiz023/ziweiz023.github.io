@@ -6,7 +6,7 @@ const map = new mapboxgl.Map({
   center: [-73.97234, 40.65522], // starting position [lng, lat]. 
   zoom: 9.9,
   minZoom: 9.7,
-  maxZoom: 10.7
+  maxZoom: 11.5
 });
 
 map.on('load', function () {
@@ -19,6 +19,8 @@ map.on('load', function () {
       type: 'geojson',
       data: { type: 'FeatureCollection', features: [] }
     });
+
+    map.addControl(new mapboxgl.NavigationControl());
 
     map.addLayer({
       'id': 'CVI-index-layer',
@@ -99,6 +101,15 @@ map.on('load', function () {
 
     // Highlight clicked polygon
     map.getSource('active-neighborhood').setData(feature);
+
+    // Fly to the clicked neighborhood
+    map.flyTo({
+      center: e.lngLat,
+      zoom: 11.5,
+      speed: 0.7,      // make the flight slow and smooth
+      curve: 1.4,      // change the curvature of the flight path
+      essential: true  // this animation is considered essential with respect to prefers-reduced-motion
+    });
   });
 
   // Change cursor to pointer when hovering

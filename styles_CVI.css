@@ -7,7 +7,6 @@
 
 /* Ensure the root elements have height */
 body {
-    /* background: linear-gradient(to bottom, rgb(186, 186, 183), ivory); */
     margin: 0;
     background-color: #ffffff;
     display: grid;
@@ -18,7 +17,7 @@ body {
     text-align: center;
 }
 
-  
+
 #page-title {
     font-family: "poppins", sans-serif;
     font-weight: 300;
@@ -28,13 +27,62 @@ body {
     margin-top: 20px;
 }
 
-#map-CVI{
+#map-CVI {
 
     height: 100%;
     flex-grow: 1;
 
 }
 
+/* ===== Map Legend Styling ===== */
+#map-legend h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    color: #000000;
+}
+
+#map-legend .color-legend-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    list-style: none;
+    padding-left: 20%;
+    margin: 10px;
+}
+
+#map-legend .color-legend-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    color: #000000;
+    font-weight: 300;
+}
+
+#map-legend .legend-swatch {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border: 1px solid #696969;
+    flex-shrink: 0;
+}
+
+#map-legend {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: poppins, sans-serif;
+    margin-bottom: 15px;
+}
+#sidebar p {
+    margin-bottom: 15px;
+}
 
 #content-container {
     flex-grow: 1;
@@ -52,14 +100,17 @@ body {
     box-sizing: border-box;
 }
 
-#index-details {
+#index {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.9rem;
+    overflow-y: scroll;
+    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 16px;
-    background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    font-family: sans-serif;
-    margin-bottom: 15px;
 }
 
 #sidebar #index-details {
@@ -67,20 +118,17 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(80px, auto);
     gap: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
     font-family: poppins, sans-serif;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 #sidebar .detail-item {
     display: grid;
     grid-template-rows: auto 1fr;
     padding: 0.75rem;
-    background-color: #f9f9f9;
+    background-color: #E7E6F770;
     border-radius: 4px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
@@ -89,6 +137,12 @@ body {
     grid-row: 1;
     font-weight: 600;
     margin-bottom: 0.5rem;
+}
+
+#index h4{
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #000000;
 }
 
 #sidebar .detail-item span {
@@ -104,6 +158,8 @@ body {
 }
 
 header {
-    background-color: #57068c; /* soft purple */
+    background-color: #57068c;
+    /* soft purple */
     color: #ffffff;
-  }
+}
+
