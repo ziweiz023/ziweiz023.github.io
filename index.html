@@ -16,7 +16,7 @@
     <div class="container position-relative">
       <div class="row align-items-center">
         <div class="col-md-10 d-flex align-items-center gap-3">
-          <svg width="90" height="90" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+          <svg width="80" height="80" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 504 504" xml:space="preserve">
             <g>
               <g>
@@ -127,44 +127,78 @@
 
   <div class="container py-4">
 
-    <div class="p-5 mb-4 rounded-3 text-start" id="CVI">
-      <div class="overlay-content">
-        <h1 class="display-5">Heat, Infrastructure, and Flood Risk</h1>
-        <p class="col-md-6 fs-5">Our Climate Vulnerability Index (CVI) for New York City synthesizes three critical
-          spatial layers—average annual surface temperature to capture urban heat exposure, infrastructure site density
-          to reflect resource access, and coastal & storm‑flooding predictions to assess flood risk—into a single
-          composite map. By combining and normalizing these factors at the neighborhood level, the CVI highlights the
-          areas where environmental stresses and infrastructure gaps overlap, revealing where delivery workers and other
-          outdoor laborers are most vulnerable. Use this interactive map to identify priority zones for targeted
-          improvements—such as cooling centers, safe rest areas, and flood‐resilient facilities—to strengthen community
-          resilience and equity across boroughs.</p>
-        <a href="CVI.html" class="btn btn-primary btn-lg" id="explore-map" type="button">Explore Map</a>
-      </div>
-    </div>
+    <div id="mainCarousel" class="carousel slide rounded-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
 
-    <div class="row align-items-md-stretch">
-      <div class="col-md-6">
-       <div class="h-100 p-5 rounded-3" id="report" style="background-color: #CEE0DC;">
-          <h2>Project Report</h2>
-          <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix
-            and match with additional component themes and more.</p>
-          <button class="btn btn-outline-light" type="button">Flooding Risk</button>
+        <div class="carousel-item active">
+          <!-- Project Report Section -->
+          <div class="h-100 p-5 rounded-4 text-start" id="report" style="background-color: #CEE0DC;">
+            <div class="overlay-content">
+              <h1 class="display-5">Project Overview</h1>
+              <p class="col-md-5 fs-5">NYC increasingly relies on delivery workers who work tirelessly through all
+                weather
+                conditions and face extreme hazards. Workers often come from marginalized communities and face barriers
+                including limited access to jobs, resources, and legal documentation that restrict employment prospects
+                and contribute
+                to poverty. Thus, understanding the disproportionate exposure to hazards they face is paramount. This
+                project focuses
+                on delivery workers in Manhattan and Brooklyn who endure constant exposure to heat, heavy rainfall and
+                lack of without adequate
+                physical or regulatory safeguards.</p>
+              <p><strong>Read the full project report here.</strong></p>
+              <button class="btn btn-outline-light" type="button">Read Report</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item ">
+          <!-- CVI Section -->
+          <div class="h-100 p-5 mb-4 rounded-4 text-start" id="CVI">
+            <div class="overlay-content">
+              <h1 class="display-5">Heat, Infrastructure, and Flood Risk</h1>
+              <p class="col-md-5 fs-5">Our Climate Vulnerability Index (CVI) for New York City synthesizes three
+                critical
+                spatial layers—average annual surface temperature to capture urban heat exposure, infrastructure site
+                density
+                to reflect resource access, and coastal & storm‑flooding predictions to assess flood risk—into a single
+                composite map. By combining and normalizing these factors at the neighborhood level, the CVI highlights
+                the
+                areas where environmental stresses and infrastructure gaps overlap, revealing where delivery workers and
+                other
+                outdoor laborers are most vulnerable. Use this interactive map to identify priority zones for targeted
+                improvements—such as cooling centers, safe rest areas, and flood‐resilient facilities—to strengthen
+                community
+                resilience and equity across boroughs.</p>
+              <a href="CVI.html" class="btn btn-primary btn-lg" id="explore-map" type="button">Explore Map</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <!-- Field Survey Section -->
+          <div class="h-100 p-5 rounded-4" id="survey" style="background-color: #B9CFD4;">
+            <h2>Field Survey</h2>
+            <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure
+              to
+              look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's
+              content for equal-height.</p>
+            <button class="btn btn-outline-secondary" type="button">Example button</button>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="h-100 p-5 rounded-3" id="survey"  style="background-color: #B9CFD4;">
-          <h2>Field Survey</h2>
-          <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to
-            look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's
-            content for equal-height.</p>
-          <button class="btn btn-outline-secondary" type="button">Example button</button>
-        </div>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 
     <footer class="pt-3 mt-4 text-body-secondary border-top">
       <strong>
-        Cenetr for Urban Science + Progress, Tandon School of Engineering, New York University
+        Center for Urban Science + Progress, Tandon School of Engineering, New York University
       </strong>
     </footer>
   </div>

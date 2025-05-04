@@ -11,7 +11,6 @@
 
 /* Ensure the root elements have height */
 body {
-    /* background: linear-gradient(to bottom, rgb(186, 186, 183), ivory); */
     margin: 0;
     background-color: #ffffff;
     display: grid;
@@ -24,7 +23,7 @@ body {
 
 #CVI {
     position: relative;
-    background-image: url('./CVI-background.png'); /* Replace with your actual image path */
+    background-image: url('./CVI-back.png'); 
     background-size: 125%; 
     background-position: right 100% bottom 70%;  /* Shift image to the right */
     background-repeat: no-repeat; /* Prevents tiling */
@@ -39,7 +38,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.453);
+    background-color: rgba(255, 255, 255, 0.223);
     z-index: 0;
     pointer-events: none;
 }
@@ -73,6 +72,7 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   }
   
+
 #page-title {
     font-family: "poppins", sans-serif;
     font-weight: 300;
@@ -100,10 +100,111 @@ header {
   background-size: 130%;
 }
 
-#report{
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+
+#report {
+  position: relative;
+  background-image: url('./driver.jpeg'); 
+  background-size: 120%; 
+  background-position: right 100% bottom 85%; 
+  background-repeat: no-repeat; /* Prevents tiling */
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 #survey{
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
+
+
+#report h1,
+#report p {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.36); /* darker shadow */
+}
+
+
+#report::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(181, 181, 181, 0.451);
+  z-index: 0;
+  pointer-events: none;
+}
+
+#report .overlay-content {
+position: relative;
+z-index: 1; /* ensures it appears above the ::before overlay */
+padding: 1rem 2rem;
+}
+
+
+#report h1 {
+  z-index: 2;
+  font-weight: 400;
+  color: #000000;
+}
+
+#report p {
+  font-weight: 300;
+  color: #000000;
+}
+
+
+
+
+svg{
+  padding-top: 10px;
+}
+
+/* Darken the control icons */
+#mainCarousel .carousel-control-prev-icon,
+#mainCarousel .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.469);
+  background-size: 100%, 100%;
+  border-radius: 80%;
+}
+
+
+#mainCarousel .carousel-control-prev {
+  left: -80px;          /* move left arrow further left */
+}
+#mainCarousel .carousel-control-next {
+  right: -80px;         /* move right arrow further right */
+}
+
+
+/* Push carousel controls further out */
+#mainCarousel .carousel-control-prev,
+#mainCarousel .carousel-control-next {
+  width: 5%;      
+  top: 50%;             
+  transform: translateY(-50%);
+}
+
+/* increase visibility on hover */
+#mainCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#mainCarousel .carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* 1. Carousel container: rounded corners, but no overflow clipping */
+#mainCarousel {
+  border-radius: 1rem;     
+  overflow: visible;  
+}
+
+/* 2. Clip only the .carousel-inner (the sliding viewport) */
+#mainCarousel .carousel-inner {
+  border-radius: inherit;   /* same radius as parent */
+  overflow: hidden;       
+}
+
+/* 3. (Optional) Make sure slides fill the clipped area */
+#mainCarousel .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+

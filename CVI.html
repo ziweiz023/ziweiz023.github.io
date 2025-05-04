@@ -15,7 +15,7 @@
     <header class="pb-3 ">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center gap-3">
-                <svg width="90" height="90" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                <svg width="80" height="80" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 504 504" xml:space="preserve">
                     <g>
                         <g>
@@ -127,28 +127,18 @@
     <div id="content-container">
         <div id="sidebar">
             <!-- Legend explaining CVI color classes -->
-            <div id="map-legend">
-                <h4>Legend</h4>
-                <ul class="color-legend-list">
-                    <li><span class="legend-swatch" style="background-color:#1a9641"></span>Least Vulnerable</li>
-                    <li><span class="legend-swatch" style="background-color:#a6d96a"></span>Less Vulnerable</li>
-                    <li><span class="legend-swatch" style="background-color:#ffffbf"></span>Moderately Vulnerable</li>
-                    <li><span class="legend-swatch" style="background-color:#fdae61"></span>More Vulnerable</li>
-                    <li><span class="legend-swatch" style="background-color:#d7191c"></span>Very Vulnerable</li>
-                    <li><span class="legend-swatch" style="background-color:#7f0000"></span>Extremely Vulnerable</li>
-                </ul>
-            </div>
+
             <p><strong>Select a neighborhood to explore its index details.</strong> </p>
 
             <div id="index">
-                <h4>Index Details</h4>
+                <h4>Details for<h4>
+                <div id="neighborhood"><span id="nta-name"></span></div>
                 <div id="index-details" class="details-grid">
-                    <div class="detail-item"><strong>Neighborhood:</strong> <span id="nta-name"></span></div>
-                    <div class="detail-item"><strong>Vulnerability Rank:</strong> <span id="cvi-rank"></span></div>
-                    <div class="detail-item"><strong>Avg Surface Temperature (F):</strong> <span id="surface-temp"></span></div>
-                    <div class="detail-item"><strong>% Land under Flood Risk (2050):</strong> <span id="flood-risk"></span></div>
-                    <div class="detail-item"><strong>Restroom Density:</strong> <span id="restroom"></span></div>
-                    <div class="detail-item"><strong>All Infrastructure Rank:</strong> <span id="infra-index"></span>
+                    <div class="detail-item">Vulnerability Rank:<span id="cvi-rank"></span></div>
+                    <div class="detail-item">Avg Surface Temperature (F):<span id="surface-temp"></span></div>
+                    <div class="detail-item">% Land under Flood Risk (2050): <span id="flood-risk"></span></div>
+                    <div class="detail-item">Restroom Density: <span id="restroom"></span></div>
+                    <div class="detail-item">All Infrastructure Rank:<span id="infra-index"></span>
                     </div>
                 </div>
             </div>
@@ -157,7 +147,17 @@
         </div>
 
         <div id="map-CVI">
-
+            <div id="map-legend">
+                <h4>Legend</h4>
+                <ul class="color-legend-list">
+                    <li><span class="legend-swatch" style="background-color:#2e954f"></span>Least Vulnerable</li>
+                    <li><span class="legend-swatch" style="background-color:#a8d971"></span>Less Vulnerable</li>
+                    <li><span class="legend-swatch" style="background-color:#fafabe"></span>Moderately Vulnerable</li>
+                    <li><span class="legend-swatch" style="background-color:#fdae61"></span>More Vulnerable</li>
+                    <li><span class="legend-swatch" style="background-color:#c31417"></span>Very Vulnerable</li>
+                    <li><span class="legend-swatch" style="background-color:#7f0e0e"></span>Extremely Vulnerable</li>
+                </ul>
+            </div>
         </div>
 
     </div>
