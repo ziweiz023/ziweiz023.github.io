@@ -28,3 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const exploreBtn = document.getElementById("read-report");
+    const cviSection = document.getElementById("report");
+  
+    if (exploreBtn && cviSection) {
+      exploreBtn.addEventListener("mouseenter", () => {
+        cviSection.classList.add("zoomed");
+      });
+  
+      exploreBtn.addEventListener("mouseleave", () => {
+        cviSection.classList.remove("zoomed");
+      });
+    }
+  });
