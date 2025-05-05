@@ -258,3 +258,14 @@ svg{
 }
 
 
+/* Align header icons with the right edge of the carousel */
+header {
+  position: relative;
+}
+
+header .ms-auto.d-flex {
+  position: absolute;
+  top: 60%;
+  right: calc((100% - 1286px) / 2);
+  transform: translateY(-50%);
+}

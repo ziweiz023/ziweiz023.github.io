@@ -1,5 +1,10 @@
 mapboxgl.accessToken = 'pk.eyJ1Ijoieml3ZWkwMjMiLCJhIjoiY204dnc5dXpoMTIwdTJrcTFvdG9xcWcycCJ9.gn8PHOvdBmJ6_U_O1zlvqA';
 
+// Store the default view
+const initialCenter = [-73.97234, 40.66722];
+const initialZoom = 9.9;
+
+
 const map = new mapboxgl.Map({
   container: 'map-CVI', // container ID
   style: 'mapbox://styles/ziwei023/cm9w0bfnh00op01qs7ktw1tq5',
@@ -51,6 +56,18 @@ map.on('load', function () {
     }
   });
 
+  // Layer to mask inactive neighborhoods
+  map.addLayer({
+    id: 'inactive-mask',
+    type: 'fill',
+    source: 'CVI-index',
+    layout: { 'visibility': 'none' },
+    paint: {
+      'fill-color': 'rgba(200, 200, 200, 0.58)',
+      'fill-opacity': 1
+    }
+  });
+
 
     // Add an outline around the selected neighborhood
     map.addLayer({
@@ -92,13 +109,17 @@ map.on('load', function () {
       // Highlight clicked polygon
       map.getSource('active-neighborhood').setData(feature);
 
+      // Show mask layer when a selection is made
+      map.setLayoutProperty('inactive-mask', 'visibility', 'visible');
+
+      // Mask all other neighborhoods except the selected one
+      map.setFilter('inactive-mask', ['!=', ['get', 'ntaname'], props['ntaname']]);
+
       // Fly to the clicked neighborhood
       map.flyTo({
         center: e.lngLat,
         zoom: 11.5,
-        speed: 0.7,      // make the flight slow and smooth
-        curve: 1.4,      // change the curvature of the flight path
-        essential: true  // this animation is considered essential with respect to prefers-reduced-motion
+        speed: 0.7, 
       });
     });
 
@@ -110,4 +131,20 @@ map.on('load', function () {
       map.getCanvas().style.cursor = '';
     });
 
+      // Clear selection button handler
+  document.getElementById('clear-selection').addEventListener('click', () => {
+    // Clear the active highlight
+    map.getSource('active-neighborhood').setData({ type: 'FeatureCollection', features: [] });
+    // Hide the mask layer
+    map.setLayoutProperty('inactive-mask', 'visibility', 'none');
+    // Reset sidebar fields
+    ['nta-name','cvi-rank','surface-temp','flood-risk','restroom','infra-index']
+      .forEach(id => document.getElementById(id).textContent = '');
+    // Fly back to default view
+    map.flyTo({ center: initialCenter, zoom: initialZoom, speed: 0.7, curve: 1.4, essential: true });
   });
+
+    
+  });
+
+  

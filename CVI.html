@@ -13,7 +13,7 @@
 
 <body>
     <header class="pb-3 ">
-        <div class="container d-flex justify-content-between align-items-center">
+        <div class="container"">
             <div class="d-flex align-items-center gap-3">
                 <svg width="70" height="70" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 504 504" xml:space="preserve">
@@ -120,7 +120,7 @@
                 </svg>
                 <h1 id='page-title' class="mb-0">Understanding Climate Vulnerability of Delivery Drivers in NYC</h1>
             </div>
-            <a href="index.html" class="btn btn-outline-info btn-md">Home</a>
+            <a href="index.html" class="btn btn-primary rounded-pill px-3" id="home">Home</a>
         </div>
     </header>
 
@@ -131,17 +131,19 @@
             <p><strong>Select a neighborhood to explore its index details.</strong> </p>
 
             <div id="index">
-                <h4>Details for<h4>
-                <div id="neighborhood"><span id="nta-name"></span></div>
-                <div id="index-details" class="details-grid">
-                    <div class="detail-item">Vulnerability Rank:<span id="cvi-rank"></span></div>
-                    <div class="detail-item">Avg Surface Temperature (F):<span id="surface-temp"></span></div>
-                    <div class="detail-item">% Land under Flood Risk (2050): <span id="flood-risk"></span></div>
-                    <div class="detail-item">Restroom Density: <span id="restroom"></span></div>
-                    <div class="detail-item">All Infrastructure Rank:<span id="infra-index"></span>
+                <h4>viewing details for<h4>
+                    <div id="neighborhood"><span id="nta-name"></span></div>
+                        <div id="index-details" class="details-grid">
+                            <div class="detail-item">Vulnerability Rank:<span id="cvi-rank"></span></div>
+                            <div class="detail-item">Avg Surface Temperature (F):<span id="surface-temp"></span></div>
+                            <div class="detail-item">% Land under Flood Risk (2050): <span id="flood-risk"></span></div>
+                            <div class="detail-item">Restroom Density: <span id="restroom"></span></div>
+                            <div class="detail-item">All Infrastructure Rank:<span id="infra-index"></span>
+                        </div>
                     </div>
-                </div>
+                <button id="clear-selection" class="btn btn-secondary btn-sm mt-2">Clear Selection</button>
             </div>
+
 
 
         </div>
